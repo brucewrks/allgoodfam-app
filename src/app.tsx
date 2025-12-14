@@ -1,16 +1,16 @@
-import { Route, Routes } from "react-router-dom";
-
-// Pages =>
-import { Home } from "@/pages";
-
-// Service Worker =>
+import { Route, Routes, Navigate } from "react-router-dom";
 import ServiceWorker from "@/pwa/serviceWorker";
+
+import PhoneLogin from "@/components/auth/PhoneLogin";
+import Dashboard from "@/pages/Dashboard";
 
 const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/app" replace />} />
+        <Route path="/login" element={<PhoneLogin />} />
+        <Route path="/app" element={<Dashboard />} />
       </Routes>
       <ServiceWorker />
     </>

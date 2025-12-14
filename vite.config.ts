@@ -1,12 +1,12 @@
-import { defineConfig } from "vite";
-import preact from "@preact/preset-vite";
+import { defineConfig } from 'vite';
+import preact from '@preact/preset-vite';
 
 // Plugins =>
-import tsconfigPaths from "vite-tsconfig-paths";
-import { VitePWA } from "vite-plugin-pwa";
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { VitePWA } from 'vite-plugin-pwa';
 
 // Manifest.json =>
-import manifest from "./manifest.json";
+import manifest from './manifest.json';
 
 export default defineConfig({
   plugins: [
@@ -14,14 +14,14 @@ export default defineConfig({
     tsconfigPaths(),
     VitePWA({
       manifest,
-      includeAssets: ["/icons/preact.svg", "/icons/vite.svg"],
+      includeAssets: ['/icons/preact.svg', '/icons/vite.svg'],
+      strategies: 'injectManifest',
+      srcDir: 'src/pwa',
+      filename: 'push.ts',
+      injectRegister: null,
       devOptions: {
-        // Switch to true to enable service worker caching in development =>
-        // Remember to clear the port 127.0.0.1:5173 cache.
-        enabled: false,
-      },
-      workbox: {
-        globPatterns: ["**/*.{js,ts,css,html}", "**/*.{svg,png,jpg,gif}"],
+        enabled: true,
+        type: 'module',
       },
     }),
   ],
