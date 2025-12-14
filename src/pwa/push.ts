@@ -1,6 +1,7 @@
 /// <reference lib='webworker' />
 
-import { precacheAndRoute } from 'workbox-precaching';
+import { registerRoute, NavigationRoute } from 'workbox-routing';
+import { createHandlerBoundToURL, precacheAndRoute } from 'workbox-precaching';
 
 // This is injected by vite-plugin-pwa at build time
 declare const self: ServiceWorkerGlobalScope & {
@@ -8,6 +9,13 @@ declare const self: ServiceWorkerGlobalScope & {
 };
 
 precacheAndRoute(self.__WB_MANIFEST);
+
+const handler = createHandlerBoundToURL('/index.html');
+registerRoute(new NavigationRoute(handler));
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(self.clients.claim());
+});
 
 // ---------------- PUSH HANDLING ----------------
 
