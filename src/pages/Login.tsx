@@ -46,7 +46,7 @@ export default function PhoneLogin() {
   }
 
   return (
-    <div style={{ maxWidth: 420, margin: '40px auto', padding: 16 }}>
+    <main style={{ maxWidth: 420, margin: '40px auto', padding: 16 }}>
       <h1>AllGoodFam</h1>
 
       {step === 'start' && (
@@ -106,6 +106,6 @@ export default function PhoneLogin() {
           </div>
         </>
       )}
-    </div>
+    </main>
   );
 }

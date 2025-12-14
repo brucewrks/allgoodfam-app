@@ -14,7 +14,7 @@ export default function DashboardPage() {
   if (!token) return null;
 
   return (
-    <div style={{ maxWidth: 720, margin: '40px auto', padding: 16 }}>
+    <main style={{ maxWidth: 720, margin: '40px auto', padding: 16 }}>
       <h1>AllGoodFam</h1>
       <p>You’re logged in.</p>
 
@@ -29,6 +29,6 @@ export default function DashboardPage() {
       >
         Log out
       </button>
-    </div>
+    </main>
   );
 }
