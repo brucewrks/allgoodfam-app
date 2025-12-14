@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import ServiceWorker from "@/pwa/serviceWorker";
 
-import PhoneLogin from "@/components/auth/PhoneLogin";
+import PhoneLogin from "@/pages/Login";
 import Dashboard from "@/pages/Dashboard";
 
 const App = () => {
