@@ -24,7 +24,7 @@ export default function AppShell({ children }: { children: ComponentChildren }) 
   const [hasNotifications, setHasNotifications] = useState(true);
 
   if (!session.token) {
-    return nav('/login');
+    nav('/login');
   }
 
   useEffect(() => {
