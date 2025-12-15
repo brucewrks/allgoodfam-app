@@ -1,6 +1,12 @@
 :root {
   --header-h: 52px;
   --footer-h: 76px;
+
+  /* Safe area bottom inset (0 on most desktops) */
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* Small extra space for Android browser UI weirdness */
+  --footer-extra: 8px;
 }
 
 .root {
@@ -56,11 +62,16 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 14px;
-  padding-bottom: calc(var(--footer-h) + 14px);
+  
+  /* keep content above footer + safe area + extra */
+  padding-bottom: calc(var(--footer-h) + var(--safe-bottom) + var(--footer-extra) + 14px);
 }
 
 .footer {
-  height: var(--footer-h);
+  /* footer becomes taller when safe area exists */
+  height: calc(var(--footer-h) + var(--safe-bottom) + var(--footer-extra));
+  /* normal padding + safe area */
+  padding: 10px 14px calc(10px + var(--safe-bottom) + var(--footer-extra));
   border-top: 1px solid #333;
   z-index: 10;
   background: #1f0f0f;
