@@ -61,7 +61,7 @@
   padding: 14px;
   
   /* keep content above footer + safe area + extra */
-  padding-bottom: calc(var(--footer-h) + var(--safe-bottom) + var(--footer-extra) + 14px);
+  padding-bottom: calc(var(--footer-h) + var(--safe-bottom));
 }
 
 .footer {
