@@ -5,7 +5,7 @@ import { AppShellProvider } from './components/layout/AppShellContext';
 import AppShell from './components/layout/AppShell';
 
 import PhoneLogin from "@/pages/Login";
-import Dashboard from "@/pages/Dashboard";
+import Dashboard from "@/pages/Groups";
 
 const App = () => {
   return (

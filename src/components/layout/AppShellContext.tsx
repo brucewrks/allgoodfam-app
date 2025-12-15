@@ -36,6 +36,11 @@ export function AppShellProvider({ children }: { children: ComponentChildren }) 
     setSession({ token: getToken() });
   }, [title, footer, showBack]);
 
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName('title')[0]!;
+    titleElement.innerText = title ? `${title} • All Good Fam` : 'All Good Fam';
+  }, [title]);
+
   const value = useMemo(
     () => ({ title, setTitle, footer, setFooter, showBack, setShowBack, session }),
     [title, footer, showBack, session]

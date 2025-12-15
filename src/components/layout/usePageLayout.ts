@@ -2,7 +2,7 @@ import { useEffect } from 'preact/hooks';
 import type { ComponentChildren } from 'preact';
 import { useAppShell } from './AppShellContext';
 
-export function usePageChrome(opts: {
+export function usePageLayout(opts: {
   title?: string;
   footer?: ComponentChildren | null;
   showBack?: boolean;

@@ -1,8 +1,12 @@
 import styles from './CheckInFooter.module.css';
 
-export default function CheckInFooter({ onPress }: { onPress: () => void }) {
+export default function CheckInFooter() {
+  function tryCheckIn() {
+    //
+  }
+
   return (
-    <button className={styles.btn} onClick={onPress}>
+    <button className={styles.btn} onClick={tryCheckIn}>
       I’m here ✅
     </button>
   );

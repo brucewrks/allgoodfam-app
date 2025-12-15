@@ -73,6 +73,9 @@ export default function AppShell({ children }: { children: ComponentChildren }) 
       <footer className={styles.footer}>
         <div className={styles.footerInner}>{footer}</div>
       </footer>
+
+      { /* Forces the container to be as wide as allowed. */ }
+      <div style={{ width: '100vw' }} />
     </div>
   );
 }
