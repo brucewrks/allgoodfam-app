@@ -4,9 +4,6 @@
 
   /* Safe area bottom inset (0 on most desktops) */
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-
-  /* Small extra space for Android browser UI weirdness */
-  --footer-extra: 8px;
 }
 
 .root {
@@ -69,9 +66,9 @@
 
 .footer {
   /* footer becomes taller when safe area exists */
-  height: calc(var(--footer-h) + var(--safe-bottom) + var(--footer-extra));
+  height: calc(var(--footer-h) + var(--safe-bottom));
   /* normal padding + safe area */
-  padding: 10px 14px calc(10px + var(--safe-bottom) + var(--footer-extra));
+  padding: 0 5px calc(5px + var(--safe-bottom));
   border-top: 1px solid #333;
   z-index: 10;
   background: #1f0f0f;
