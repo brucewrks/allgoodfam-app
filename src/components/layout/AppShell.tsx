@@ -2,9 +2,9 @@ import type { ComponentChildren } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { useNavigate } from 'react-router-dom';
 
-import { VAPID_PUBLIC_KEY } from "@/config";
-import { subscribeToPush } from "@/util/push";
-import { api } from "@/util/api";
+import { VAPID_PUBLIC_KEY } from '@/config';
+import { subscribeToPush } from '@/util/push';
+import { api } from '@/util/api';
 
 import { useAppShell } from './AppShellContext';
 import styles from './AppShell.module.css';
@@ -12,7 +12,7 @@ import styles from './AppShell.module.css';
 async function subscribeNotifications(token: string) {
   try {
     const sub = await subscribeToPush(VAPID_PUBLIC_KEY);
-    await api('/push/subscribe', { method: "POST", token, body: sub });
+    await api('/push/subscribe', { method: 'POST', token, body: sub });
   } catch (e: any) {
     //
   }
@@ -64,7 +64,7 @@ export default function AppShell({ children }: { children: ComponentChildren }) 
 
       {!hasNotifications && (
         <div className={styles.notice}>
-          <a href="javascript:void" onClick={() => subscribeNotifications(session.token!)}>Click here</a> to get notifications.
+          <a href='javascript:void' onClick={() => subscribeNotifications(session.token!)}>Click here</a> to get notifications.
         </div>
       )}
 

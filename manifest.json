@@ -1,6 +1,6 @@
 {
-    "theme_color": "#673ab8",
-    "background_color": "#673ab8",
+    "theme_color": "#1f0f0f",
+    "background_color": "#1f0f0f",
     "display": "minimal-ui",
     "scope": "/",
     "start_url": "/app",
